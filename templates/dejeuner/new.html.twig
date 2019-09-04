@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Dejeuner{% endblock %}
+
+{% block body %}
+    <h1>Create new Dejeuner</h1>
+
+    {{ include('dejeuner/_form.html.twig') }}
+
+    <a href="{{ path('dejeuner_index') }}">back to list</a>
+{% endblock %}

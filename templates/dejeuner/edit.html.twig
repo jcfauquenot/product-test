@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Dejeuner{% endblock %}
+
+{% block body %}
+    <h1>Edit Dejeuner</h1>
+
+    {{ include('dejeuner/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('dejeuner_index') }}">back to list</a>
+
+    {{ include('dejeuner/_delete_form.html.twig') }}
+{% endblock %}

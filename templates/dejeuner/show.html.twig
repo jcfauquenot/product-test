@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dejeuner{% endblock %}
+
+{% block body %}
+    <h1>Dejeuner</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dejeuner.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ dejeuner.name }}</td>
+            </tr>
+            <tr>
+                <th>Personne</th>
+                <td>{{ dejeuner.personne }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('dejeuner_index') }}">back to list</a>
+
+    <a href="{{ path('dejeuner_edit', {'id': dejeuner.id}) }}">edit</a>
+
+    {{ include('dejeuner/_delete_form.html.twig') }}
+{% endblock %}

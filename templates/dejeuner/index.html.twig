@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dejeuner index{% endblock %}
+
+{% block body %}
+    <h1>Dejeuner index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Personne</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dejeuner in dejeuners %}
+            <tr>
+                <td>{{ dejeuner.id }}</td>
+                <td>{{ dejeuner.name }}</td>
+                <td>{{ dejeuner.personne }}</td>
+                <td>
+                    <a href="{{ path('dejeuner_show', {'id': dejeuner.id}) }}">show</a>
+                    <a href="{{ path('dejeuner_edit', {'id': dejeuner.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('dejeuner_new') }}">Create new</a>
+{% endblock %}
